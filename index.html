@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f4ed">
+  <meta name="description" content="Vídeos promocionales y creatividad audiovisual para restaurantes y hoteles. Trabajo remoto para proyectos de todo el mundo.">
+  <title>Aroa Cerpa Rodríguez | Creatividad audiovisual</title>
+  <style>
+    :root {
+      --paper: #f8f4ed;
+      --paper-deep: #eee7db;
+      --ink: #282621;
+      --muted: #706b61;
+      --gold: #a88a52;
+      --gold-dark: #806638;
+      --line: rgba(91, 76, 49, .19);
+      --white: #fffdf9;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 88px; border-bottom: 1px solid var(--line);
+    }
+    .wordmark { text-decoration: none; font: 18px var(--serif); letter-spacing: .045em; }
+    .wordmark span { color: var(--gold-dark); }
+    nav { display: flex; gap: 30px; align-items: center; }
+    nav a { text-decoration: none; font-size: 13px; color: var(--muted); }
+    nav a:hover { color: var(--gold-dark); }
+    .hero {
+      min-height: 610px; display: grid; grid-template-columns: 1.08fr .92fr;
+      gap: 54px; align-items: center; padding: 72px 0 86px;
+    }
+    .eyebrow {
+      margin: 0 0 17px; color: var(--gold-dark); text-transform: uppercase;
+      letter-spacing: .19em; font-size: 11px; font-weight: 700;
+    }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; }
+    h1 { max-width: 660px; margin: 0; font-size: clamp(46px, 6.5vw, 78px); line-height: 1.02; letter-spacing: -.035em; }
+    h1 em { color: var(--gold-dark); font-weight: 400; }
+    .hero-copy { max-width: 525px; margin: 24px 0 28px; color: var(--muted); font-size: 17px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; min-height: 48px;
+      padding: 0 22px; border: 1px solid var(--gold-dark); border-radius: 2px;
+      background: var(--gold-dark); color: white; text-decoration: none; font-size: 13px;
+      letter-spacing: .035em;
+    }
+    .button.secondary { color: var(--ink); background: transparent; border-color: var(--line); }
+    .button:hover { transform: translateY(-1px); }
+    .hero-art { position: relative; display: grid; place-items: center; }
+    .hero-art::before {
+      content: ""; position: absolute; width: min(83%, 390px); aspect-ratio: 1;
+      border: 1px solid rgba(168,138,82,.3); border-radius: 50%;
+    }
+    .hero-art img { position: relative; width: min(100%, 500px); mix-blend-mode: multiply; }
+    .remote-note {
+      display: flex; align-items: center; gap: 10px; margin-top: 24px;
+      color: var(--muted); font-size: 12px; letter-spacing: .04em;
+    }
+    .remote-note::before { content: ""; width: 24px; height: 1px; background: var(--gold); }
+    section { padding: 92px 0; border-top: 1px solid var(--line); }
+    .section-head { max-width: 650px; margin-bottom: 38px; }
+    h2 { margin: 0; font-size: clamp(36px, 4.4vw, 54px); line-height: 1.1; letter-spacing: -.025em; }
+    .section-intro { margin: 17px 0 0; max-width: 580px; color: var(--muted); }
+    .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .service-card {
+      min-height: 270px; padding: 30px; background: var(--white);
+      border: 1px solid var(--line); display: flex; flex-direction: column;
+    }
+    .number { color: var(--gold-dark); font: 16px var(--serif); }
+    .service-card h3 { margin: 27px 0 8px; font-size: 28px; line-height: 1.2; }
+    .service-card p { margin: 0; max-width: 470px; color: var(--muted); font-size: 14px; }
+    .service-state { margin-top: auto; padding-top: 20px; color: var(--gold-dark); font-size: 11px; letter-spacing: .11em; text-transform: uppercase; }
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .price-card {
+      padding: 27px; background: var(--white); border: 1px solid var(--line);
+      display: flex; flex-direction: column; min-height: 238px;
+    }
+    .price-card.featured { border-color: var(--gold); background: #f3eee4; }
+    .price-card h3 { margin: 13px 0 3px; font-size: 24px; }
+    .price { color: var(--gold-dark); font: 38px var(--serif); }
+    .price-card p { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+    .pricing-note { margin: 22px 0 0; color: var(--muted); font-size: 12px; }
+    .portfolio { background: var(--paper-deep); }
+    .demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .demo-card { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
+    .demo-card img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+    .demo-copy { padding: 20px 20px 22px; }
+    .demo-badge {
+      display: inline-block; color: var(--gold-dark); border: 1px solid rgba(128,102,56,.35);
+      padding: 4px 8px; font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+    }
+    .demo-card h3 { margin: 12px 0 7px; font-size: 23px; line-height: 1.2; }
+    .demo-card p { margin: 0; color: var(--muted); font-size: 13px; }
+    .demo-disclaimer { margin: 20px 0 0; color: var(--muted); font-size: 12px; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .process-item { padding-top: 18px; border-top: 1px solid var(--gold); }
+    .process-item h3 { margin: 8px 0; font-size: 23px; }
+    .process-item p { margin: 0; color: var(--muted); font-size: 14px; }
+    .contact {
+      display: grid; grid-template-columns: 1fr .75fr; gap: 48px; align-items: center;
+      background: #292720; color: var(--paper); padding: 66px;
+    }
+    .contact .eyebrow { color: #c3a66d; }
+    .contact h2 { max-width: 600px; }
+    .contact p { max-width: 520px; color: #d1cabe; }
+    .contact-status {
+      padding: 21px; border: 1px solid rgba(255,255,255,.24);
+      color: #e0d9cc; font-size: 13px;
+    }
+    .contact-status strong { display: block; margin-bottom: 5px; color: white; font-weight: 500; }
+    .contact-status .button { margin-top: 14px; }
+    .contact-email { display: block; margin-top: 11px; color: #e0d9cc; font-size: 12px; }
+    footer { display: flex; justify-content: space-between; gap: 18px; padding: 28px 0; color: var(--muted); font-size: 11px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a { color: inherit; text-decoration: none; }
+    .social-links { display: flex; gap: 18px; }
+    .social-links a { color: inherit; text-decoration: none; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .topbar { min-height: 72px; }
+      nav { gap: 14px; }
+      nav a { font-size: 11px; }
+      nav a:nth-child(2) { display: none; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 20px; padding: 68px 0 60px; }
+      h1 { font-size: clamp(46px, 13vw, 68px); }
+      .hero-copy { font-size: 15px; }
+      .hero-art { grid-row: 1; max-width: 330px; margin: 0 auto 12px; }
+      .hero-art::before { width: 75%; }
+      section { padding: 66px 0; }
+      .services, .process-grid, .contact, .demo-grid { grid-template-columns: 1fr; }
+      .pricing { grid-template-columns: 1fr; }
+      .service-card { min-height: 230px; }
+      .contact { padding: 34px 24px; gap: 24px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="wordmark" href="#inicio" aria-label="Aroa Cerpa Rodríguez, inicio">ACR <span>·</span> CREATIVA</a>
+    <nav aria-label="Navegación principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#tarifas">Tarifas</a>
+      <a href="#trabajos">Trabajos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="inicio" style="border:0">
+      <div>
+        <p class="eyebrow">Creatividad audiovisual · Diseño web</p>
+        <h1>Haz que tu espacio <em>se sienta.</em></h1>
+        <p class="hero-copy">Vídeos cortos y contenido visual para restaurantes y hoteles que quieren mostrar lo que hace especial cada experiencia.</p>
+        <div class="actions">
+          <a class="button" href="#servicios">Descubrir servicios</a>
+          <a class="button secondary" href="mailto:Aroacr.creativa@gmail.com">Contactar por correo</a>
+        </div>
+        <div class="remote-note">Colaboraciones remotas en todo el mundo</div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/logo-ar.jpg" alt="Logotipo dorado AR de Aroa Cerpa Rodríguez">
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Lo que puedo aportar</p>
+          <h2>Ideas cuidadas, hechas para conectar.</h2>
+          <p class="section-intro">Una presencia digital atractiva empieza por contar bien lo que ofreces, con imágenes y una identidad que se recuerdan.</p>
+        </div>
+        <div class="services">
+          <article class="service-card">
+            <span class="number">01</span>
+            <h3>Vídeos promocionales</h3>
+            <p>Piezas breves para redes sociales que destacan el ambiente, la gastronomía, las habitaciones y los servicios de restaurantes y hoteles.</p>
+            <span class="service-state">Servicio principal</span>
+          </article>
+          <article class="service-card">
+            <span class="number">02</span>
+            <h3>Diseño de páginas web</h3>
+            <p>Páginas web sencillas y adaptables para que los negocios presenten sus servicios, información y contacto de forma clara.</p>
+            <span class="service-state">Servicio disponible · Desde 250 €</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tarifas">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Precios de lanzamiento</p>
+          <h2>Tarifas sencillas para empezar.</h2>
+          <p class="section-intro">Edición de vídeos cortos en formato vertical para redes, a partir de los clips que proporcione el cliente.</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <span class="number">01 · Una pieza</span>
+            <h3>Vídeo corto</h3>
+            <div class="price">50 €</div>
+            <p>Un vídeo de 15–30 segundos, con edición y textos sencillos.</p>
+          </article>
+          <article class="price-card featured">
+            <span class="number">02 · Pack</span>
+            <h3>3 vídeos</h3>
+            <div class="price">135 €</div>
+            <p>Tres piezas breves para presentar tu negocio en redes.</p>
+          </article>
+          <article class="price-card">
+            <span class="number">03 · Pack</span>
+            <h3>5 vídeos</h3>
+            <div class="price">210 €</div>
+            <p>Cinco piezas breves para mantener activo tu contenido.</p>
+          </article>
+        </div>
+        <p class="pricing-note">Incluye una ronda de cambios. El cliente facilita los clips; no incluye grabación ni gastos adicionales.</p>
+        <div class="section-head" style="margin-top:58px; margin-bottom:28px">
+          <p class="eyebrow">Diseño web · Tarifas de lanzamiento</p>
+          <h2>Una presencia online a tu medida.</h2>
+          <p class="section-intro">Precios orientativos para webs sencillas. Cada proyecto se confirma según sus necesidades.</p>
+        </div>
+        <div class="pricing">
+          <article class="price-card">
+            <span class="number">01 · Presencia esencial</span>
+            <h3>Web de una página</h3>
+            <div class="price">Desde 250 €</div>
+            <p>Una página adaptable con secciones esenciales para presentar un negocio.</p>
+          </article>
+          <article class="price-card featured">
+            <span class="number">02 · Más información</span>
+            <h3>Web de hasta 5 secciones</h3>
+            <div class="price">Desde 450 €</div>
+            <p>Una web sencilla para organizar mejor los servicios e información del negocio.</p>
+          </article>
+          <article class="price-card">
+            <span class="number">03 · Opcional</span>
+            <h3>Mantenimiento</h3>
+            <div class="price">Desde 30 €/mes</div>
+            <p>Actualizaciones sencillas y pequeños cambios, según el alcance acordado.</p>
+          </article>
+        </div>
+        <p class="pricing-note">Los importes son orientativos. Dominio, alojamiento, textos, fotografías y funciones especiales no están incluidos; se presupuestan aparte. El precio final se acuerda antes de empezar.</p>
+      </div>
+    </section>
+
+    <section class="portfolio" id="trabajos">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Selección creativa</p>
+          <h2>Proyectos que cuentan historias.</h2>
+          <p class="section-intro">Tres conceptos visuales de muestra para enseñar posibles estilos de contenido a distintos tipos de negocio.</p>
+        </div>
+        <div class="demo-grid">
+          <article class="demo-card">
+            <img src="assets/demo-restaurante.jpg" alt="Concepto visual demo de un plato mediterráneo en un restaurante con luz cálida" loading="lazy">
+            <div class="demo-copy">
+              <span class="demo-badge">Demo conceptual</span>
+              <h3>Restaurante mediterráneo</h3>
+              <p>Idea para un reel que destaque el emplatado, los ingredientes y el ambiente de una cena.</p>
+            </div>
+          </article>
+          <article class="demo-card">
+            <img src="assets/demo-hotel.jpg" alt="Concepto visual demo de una habitación luminosa de hotel boutique junto al mar" loading="lazy">
+            <div class="demo-copy">
+              <span class="demo-badge">Demo conceptual</span>
+              <h3>Hotel junto al mar</h3>
+              <p>Idea de vídeo breve para presentar la habitación, la luz de la mañana y las vistas.</p>
+            </div>
+          </article>
+          <article class="demo-card">
+            <img src="assets/demo-tienda.jpg" alt="Concepto visual demo de una tienda boutique con cerámica artesanal y textiles" loading="lazy">
+            <div class="demo-copy">
+              <span class="demo-badge">Demo conceptual</span>
+              <h3>Tienda de artesanía</h3>
+              <p>Idea visual para mostrar productos, texturas y detalles de una tienda independiente.</p>
+            </div>
+          </article>
+        </div>
+        <p class="demo-disclaimer">Estas imágenes son ejemplos conceptuales creados para mostrar una posible dirección visual; no representan clientes ni trabajos realizados.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Una colaboración sencilla</p>
+          <h2>De la idea a una pieza lista para compartir.</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-item"><span class="number">01</span><h3>Nos conocemos</h3><p>Me cuentas qué hace único a tu restaurante, hotel o proyecto y qué quieres comunicar.</p></article>
+          <article class="process-item"><span class="number">02</span><h3>Definimos la idea</h3><p>Acordamos el enfoque, el formato y los materiales necesarios antes de empezar.</p></article>
+          <article class="process-item"><span class="number">03</span><h3>Preparamos tu contenido</h3><p>Desarrollamos una propuesta visual pensada para presentar tu negocio en digital.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="contacto" style="border:0; padding-top:18px">
+      <div class="contact">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>¿Tienes un proyecto en mente?</h2>
+          <p>Trabajo en remoto con negocios de cualquier lugar. Cuéntame qué necesitas y veremos cómo darle forma.</p>
+        </div>
+        <div class="contact-status">
+          <strong>Contacto por correo</strong>
+          <a class="button" href="mailto:Aroacr.creativa@gmail.com">Escribir por correo</a>
+          <span class="contact-email">Aroacr.creativa@gmail.com</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <span>© <span id="year">2026</span> Aroa Cerpa Rodríguez · Creatividad audiovisual</span>
+    <span class="social-links">
+      <a href="https://www.instagram.com/aroacrcreativa/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.tiktok.com/@aroacrcreativa" target="_blank" rel="noopener noreferrer">TikTok</a>
+      <span>Trabajo remoto · Proyectos internacionales</span>
+    </span>
+  </footer>
+</body>
+</html>
